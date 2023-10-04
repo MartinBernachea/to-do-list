@@ -1,6 +1,8 @@
 import { useState } from 'react'
 
 import {
+    IconCircle,
+    IconCircleCheck,
     IconEdit,
     IconTrashFilled
 } from '@tabler/icons-react'
@@ -42,6 +44,8 @@ export default function TaskContainer({ taskArray, setTaskArray }) {
         setEditing(null);
     }
 
+    const color = '#ff5945'
+
     return (
         <div className='tasks-container w100 center'>
             {taskArray.map((task) => (
@@ -49,10 +53,11 @@ export default function TaskContainer({ taskArray, setTaskArray }) {
                     className={`task center ${task.completed ? 'completed' : ''}`}
                     key={task.id}
                 >
+                    {task.completed ? <IconCircleCheck color={color} onClick={() => toggleComplete(task.id)}/> : <IconCircle onClick={() => toggleComplete(task.id)}/>}
                     {editing === task.id ? (
-                        <form onSubmit={e => handleSubmit(e, task.id)}>
+                        <form className='editing center' onSubmit={e => handleSubmit(e, task.id)}>
                             <input
-                                className='editing'
+                                autoFocus
                                 value={task.text}
                                 onChange={e => handleChange(e, task.id)}
                             />

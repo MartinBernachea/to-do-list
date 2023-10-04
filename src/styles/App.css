@@ -8,7 +8,7 @@
 html,
 body {
   color: #222;
-  background: #003457;
+  background: #222;
   width: 100vw;
   height: 100vh;
 }
@@ -34,52 +34,56 @@ body {
   flex-direction: column;
   width: 600px;
   height: 80vh;
-  background-color: #777;
+  background-color: #fff;
   border-radius: 10px;
 }
 .container h1 {
   font-size: 3rem;
   height: 10%;
+  margin: 20px 0;
 }
 
 .create-task-box {
-  height: 10%;
-  margin-bottom: 10px;
+  justify-content: space-between;
+  background: #edeef0;
+  border-radius: 30px;
+  max-width: 85%;
+  margin-bottom: 20px;
 }
 .create-task-box input {
-  width: 65%;
-  height: 45px;
-  padding-inline-start: 10px;
+  padding-inline-start: 30px;
   border: none;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  border-radius: 30px;
+  background: transparent;
+  height: 100%;
+  width: 80%;
 }
 .create-task-box button {
-  width: 15%;
+  width: 20%;
   height: 45px;
-  font-size: 1.1rem;
   border: none;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  background-color: #003457;
-  color: #ebebeb;
+  border-radius: 30px;
+  background-color: #ff5945;
+  color: #fff;
 }
 
 .tasks-container {
   height: 80%;
-  color: #ebebeb;
+  max-height: 450px;
+  color: #222;
   justify-content: flex-start;
   flex-direction: column;
-  gap: 1rem;
+  overflow-y: scroll;
+  
 }
 
 .task {
   width: 80%;
-  height: 45px;
+  min-height: 45px;
   justify-content: space-between;
   padding: 0 15px;
-  background-color: #003457;
   border-radius: 5px;
+  cursor: pointer;
 }
 .task p {
   width: 70%;
@@ -99,10 +103,9 @@ body {
 }
 
 .icon:hover {
-  color: #fff;
   cursor: pointer;
   transition: all 200ms ease-in-out;
-  transform: scale(1.25);
+  transform: scale(1.15);
 }
 
 .create-task-box button:hover {
@@ -113,5 +116,26 @@ body {
 
 .completed p {
   text-decoration:line-through;
-  color: red;
+  color: #888;
+}
+
+.editing {
+  justify-content: flex-start;
+  width: 70%;
+  height: 35px;
+  background: #edeef0;
+  border-radius: 30px;
+}
+
+.editing input {
+  width: 100%;
+  height: 100%;
+  background: transparent;
+  border: none;
+  border-radius: 30px;
+  padding-inline-start: 30px;
+}
+
+.editing input:focus {
+  outline: 1px solid #888;
 }

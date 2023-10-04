@@ -14,7 +14,7 @@ export default function App() {
 
   return (
     <section className='container center'>
-      <h1 className='w100 center'>To do List!</h1>
+      <h1 className='w100 center'>To-Do List!</h1>
       <TaskBox
         taskArray={taskArray}
         setTaskArray={setTaskArray}
